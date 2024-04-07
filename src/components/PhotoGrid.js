@@ -9,7 +9,10 @@ const PhotoGrid = ({ photos, photosPerPage }) => {
   const indexOfFirstPhoto = indexOfLastPhoto - photosPerPage;
   const currentPhotos = photos.slice(indexOfFirstPhoto, indexOfLastPhoto);
 
-  const paginate = (pageNumber) => dispatch(setCurrentPage(pageNumber));
+  const paginate = (pageNumber) => {
+    dispatch(setCurrentPage(pageNumber));
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  };
 
   return (
     <div>
@@ -51,12 +54,16 @@ const Pagination = ({ photosPerPage, totalPhotos, paginate, currentPage }) => {
         onClick={() => paginate(currentPage - 1)}
         disabled={currentPage == 1}
       >
-        Prev Page
+        <span>Prev Page</span>
       </button>
       {pageNumbers.map((number) => (
         <li key={number}>
-          <button class="page-button" onClick={() => paginate(number)}>
-            {number}
+          <button
+            class="page-button"
+            onClick={() => paginate(number)}
+            disabled={currentPage == number}
+          >
+            <span>{number}</span>
           </button>
         </li>
       ))}
@@ -65,7 +72,7 @@ const Pagination = ({ photosPerPage, totalPhotos, paginate, currentPage }) => {
         onClick={() => paginate(currentPage + 1)}
         disabled={currentPage == pageNumbers[pageNumbers.length - 1]}
       >
-        Next Page
+        <span>Next Page</span>
       </button>
     </ul>
   );
