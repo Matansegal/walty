@@ -1,0 +1,68 @@
+.app-container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem; 
+}
+
+.back-button {
+  cursor: pointer;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px 22px;
+  width: 230px;
+  margin-top: 2rem;
+  box-sizing: border-box
+}
+
+.back-button span {
+  font-family: Heebo;
+  font-size: 20px;
+  font-weight: 700;
+  color: #7e6cee;
+  padding-left: 5px
+}
+
+.last-searches {
+	font-family: Heebo;
+	font-size: 18px;
+	color: #494b53
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  gap: 20px; 
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  object-fit: cover; 
+}
+
+.pagination {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination li button {
+  padding: 5px 10px;
+}
+
