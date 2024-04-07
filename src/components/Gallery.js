@@ -9,6 +9,7 @@ const Gallery = () => {
   const pixabatUrl = "https://pixabay.com/api";
   const apiKey = "43264602-7eca1d36ed4a9f04d5bbaf12c";
   const picsAmount = 100;
+  const picsPerPage = 20;
   const navigate = useNavigate();
 
   const backButton = () => {
@@ -43,7 +44,7 @@ const Gallery = () => {
         </div>
 
         <div>
-          <PhotosGrid photos={photos} />
+          <PhotosGrid photos={photos} photosPerPage={picsPerPage} />
         </div>
       </div>
     </div>

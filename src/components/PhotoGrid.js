@@ -1,36 +1,10 @@
-// import React from "react";
-
-// const PhotosGrid = ({ photos }) => {
-//   console.log(photos);
-//   return (
-//     <div>
-//       {photos.map((photo) => (
-//         <img
-//           key={photo.id}
-//           src={photo.webformatURL}
-//           alt={photo.tags}
-//           style={{
-//             width: photo.webformatWidth / 1.5,
-//             height: photo.webformatHeight / 1.5,
-//             margin: "10px",
-//           }}
-//         />
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default PhotosGrid;
-
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrentPage } from "../actions";
 
-const PhotoGrid = ({ photos }) => {
+const PhotoGrid = ({ photos, photosPerPage }) => {
   const currentPage = useSelector((state) => state.photoGrid.currentPage);
   const dispatch = useDispatch();
-  const photosPerPage = 20;
-
   const indexOfLastPhoto = currentPage * photosPerPage;
   const indexOfFirstPhoto = indexOfLastPhoto - photosPerPage;
   const currentPhotos = photos.slice(indexOfFirstPhoto, indexOfLastPhoto);
@@ -39,16 +13,15 @@ const PhotoGrid = ({ photos }) => {
 
   return (
     <div>
-      <div className="photo-grid">
-        {currentPhotos.map((photo, index) => (
+      <div>
+        {currentPhotos.map((photo) => (
           <img
-            class="photo"
             key={photo.id}
             src={photo.webformatURL}
             alt={photo.tags}
             style={{
-              width: photo.webformatWidth / 1.5,
-              height: photo.webformatHeight / 1.5,
+              width: photo.webformatWidth / 2,
+              height: photo.webformatHeight / 2,
               margin: "10px",
             }}
           />
@@ -58,12 +31,13 @@ const PhotoGrid = ({ photos }) => {
         photosPerPage={photosPerPage}
         totalPhotos={photos.length}
         paginate={paginate}
+        currentPage={currentPage}
       />
     </div>
   );
 };
 
-const Pagination = ({ photosPerPage, totalPhotos, paginate }) => {
+const Pagination = ({ photosPerPage, totalPhotos, paginate, currentPage }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalPhotos / photosPerPage); i++) {
@@ -72,11 +46,27 @@ const Pagination = ({ photosPerPage, totalPhotos, paginate }) => {
 
   return (
     <ul className="pagination">
+      <button
+        class="page-button"
+        onClick={() => paginate(currentPage - 1)}
+        disabled={currentPage == 1}
+      >
+        Prev Page
+      </button>
       {pageNumbers.map((number) => (
         <li key={number}>
-          <button onClick={() => paginate(number)}>{number}</button>
+          <button class="page-button" onClick={() => paginate(number)}>
+            {number}
+          </button>
         </li>
       ))}
+      <button
+        class="page-button"
+        onClick={() => paginate(currentPage + 1)}
+        disabled={currentPage == pageNumbers[pageNumbers.length - 1]}
+      >
+        Next Page
+      </button>
     </ul>
   );
 };
