@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import Tags from "./Tags";
 
 const LastSeraches = () => {
   const lastSearches = useSelector((state) => state.search.lastSearches);
@@ -13,7 +14,7 @@ const LastSeraches = () => {
       <div class="last-searches">
         <ul>
           {lastSearches
-            .map((tags, index) => <li key={index}>{tags}</li>)
+            .map((searchTags) => <Tags tags={searchTags} />)
             .reverse()}
         </ul>
       </div>

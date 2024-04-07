@@ -17,7 +17,7 @@ const SearchBar = () => {
     <div>
       <div class="search-container">
         <input
-          style={{ width: "225px", textAlign: "left" }}
+          style={{ width: "225px", textAlign: "left", fontFamily: "Heebo" }}
           type="text"
           value={searchTags}
           onChange={(e) => setSearchTagsState(e.target.value)}

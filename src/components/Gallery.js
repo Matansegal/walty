@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import PhotosGrid from "./PhotoGrid";
+import Tags from "./Tags";
 
 const Gallery = () => {
   const [photos, setPhotos] = useState([]);
@@ -37,16 +38,8 @@ const Gallery = () => {
           <span>Go Back</span>
         </button>
       </div>
-
-      <div class="_91418f">
-        <div class="_4b8672 a12742 _1b5290" style={{ color: "white" }}>
-          <h2>{searchTags}</h2>
-        </div>
-
-        <div>
-          <PhotosGrid photos={photos} photosPerPage={picsPerPage} />
-        </div>
-      </div>
+      <Tags tags={searchTags} />
+      <PhotosGrid photos={photos} photosPerPage={picsPerPage} />
     </div>
   );
 };
