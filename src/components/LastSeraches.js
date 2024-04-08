@@ -11,7 +11,7 @@ const LastSeraches = () => {
   return (
     <div style={{ textAlign: "center" }}>
       <h2>Last Searches</h2>
-      <div class="last-searches">
+      <div>
         {lastSearches.map((searchTags) => <Tags tags={searchTags} />).reverse()}
       </div>
     </div>

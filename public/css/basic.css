@@ -112,18 +112,6 @@
   padding-left: 5px
 }
 
-.last-searches {
-	font-size: 18px;
-	color: #494b53;
-  justify-content: center;
-  padding: 24px;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
