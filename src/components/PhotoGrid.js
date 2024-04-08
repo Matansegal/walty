@@ -16,18 +16,18 @@ const PhotoGrid = ({ photos, photosPerPage }) => {
 
   return (
     <div>
-      <div>
+      <div class="gallery">
         {currentPhotos.map((photo) => (
-          <img
-            key={photo.id}
-            src={photo.webformatURL}
-            alt={photo.tags}
-            style={{
-              width: photo.webformatWidth / 2,
-              height: photo.webformatHeight / 2,
-              margin: "10px",
-            }}
-          />
+          <div class="pics">
+            <img
+              key={photo.id}
+              src={photo.webformatURL}
+              alt={photo.tags}
+              style={{
+                width: "100%",
+              }}
+            />
+          </div>
         ))}
       </div>
       <Pagination
