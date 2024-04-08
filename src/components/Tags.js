@@ -5,14 +5,15 @@ export default function Tags({ tags }) {
     return searchTags.split(" ").filter((tag) => tag.trim() !== "");
   };
   return (
-    <div class="_91418f">
-      <div class="_4b8672 a12742 _1b5290">
-        {splitIntoBoxes(tags).map((word, index) => (
-          <span key={index} class="card">
-            {word}
-          </span>
-        ))}
-      </div>
+    <div
+      class="_91418f _4b8672 a12742 _1b5290"
+      style={{ marginBottom: "10px" }}
+    >
+      {splitIntoBoxes(tags).map((word, index) => (
+        <span key={index} class="card">
+          {word}
+        </span>
+      ))}
     </div>
   );
 }

@@ -33,12 +33,14 @@ const Gallery = () => {
 
   return (
     <div class="_98a547">
-      <div>
+      <div style={{ margin: "0 80% 0 0" }}>
         <button class="back-button" onClick={backButton}>
           <span>Go Back</span>
         </button>
       </div>
-      <Tags tags={searchTags} />
+      <div style={{ marginBottom: "40px" }}>
+        <Tags tags={searchTags} />
+      </div>
       <PhotosGrid photos={photos} photosPerPage={picsPerPage} />
     </div>
   );

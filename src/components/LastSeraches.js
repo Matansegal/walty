@@ -9,14 +9,10 @@ const LastSeraches = () => {
   }
 
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <h2>Last Searches</h2>
       <div class="last-searches">
-        <ul>
-          {lastSearches
-            .map((searchTags) => <Tags tags={searchTags} />)
-            .reverse()}
-        </ul>
+        {lastSearches.map((searchTags) => <Tags tags={searchTags} />).reverse()}
       </div>
     </div>
   );
