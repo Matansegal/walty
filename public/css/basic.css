@@ -4,16 +4,6 @@
   height: 100vh;
 }
 
-.title {
-  text-align: "center";
-}
-
-/* .search-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem; 
-} */
-
 .searchbar {
   width: 100%;
   max-width: 300px;
