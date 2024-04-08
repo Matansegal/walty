@@ -14,28 +14,13 @@ const SearchBar = () => {
   };
 
   return (
-    // <div>
-    //   <div class="search-container">
-    //     <input
-    //       style={{ width: "225px", textAlign: "left", fontFamily: "Heebo" }}
-    //       type="text"
-    //       value={searchTags}
-    //       onChange={(e) => setSearchTagsState(e.target.value)}
-    //       placeholder="Enter search tags"
-    //     />
-    //   </div>
-    //   <div class="eb1752">
-    //     <button class="e95021" onClick={handleSearch} disabled={!searchTags}>
-    //       <div>Search</div>
-    //     </button>
-    //   </div>
-    // </div>
     <form action="./" method="get">
       <div class="searchbar">
         <button
           type="submit"
           class="searchbar__button e95021"
           onClick={handleSearch}
+          onKeyDown={(e) => (e.key === "Enter" ? handleSearch : "")}
           disabled={!searchTags}
         >
           <i class="material-icons">search</i>
