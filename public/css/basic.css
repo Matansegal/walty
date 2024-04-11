@@ -158,6 +158,8 @@
 
 @media (max-width: 991px){
   .gallery{
+    display: 'flex';
+    flex-direction: row;
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
