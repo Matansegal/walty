@@ -156,14 +156,16 @@
   filter: opacity(.7);
 }
 
+.gallery img {
+  width: 100%;
+  height: auto;
+}
+
 @media (max-width: 991px){
   .gallery{
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
-    -webkit-column-width: 50%;
-    -moz-column-width: 50%;
-    column-width: 50%;
   }
 }
 

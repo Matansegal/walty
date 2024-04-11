@@ -19,14 +19,7 @@ const PhotoGrid = ({ photos, photosPerPage }) => {
       <div class="gallery">
         {currentPhotos.map((photo) => (
           <div class="pics">
-            <img
-              key={photo.id}
-              src={photo.webformatURL}
-              alt={photo.tags}
-              style={{
-                width: "100%",
-              }}
-            />
+            <img key={photo.id} src={photo.webformatURL} alt={photo.tags} />
           </div>
         ))}
       </div>
