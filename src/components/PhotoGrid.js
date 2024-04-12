@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrentPage } from "../actions";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 const PhotoGrid = ({ photos, photosPerPage }) => {
   const currentPage = useSelector((state) => state.photoGrid.currentPage);
@@ -14,15 +15,27 @@ const PhotoGrid = ({ photos, photosPerPage }) => {
     window.scrollTo(0, 0); // Scroll to the top of the page
   };
 
+  const columnsCount = {
+    300: 2,
+    600: 3,
+    900: 4,
+  };
+
   return (
     <div>
-      <div class="gallery">
-        {currentPhotos.map((photo) => (
-          <div class="pics">
-            <img key={photo.id} src={photo.webformatURL} alt={photo.tags} />
-          </div>
-        ))}
-      </div>
+      <ResponsiveMasonry columnsCountBreakPoints={columnsCount}>
+        <Masonry gutter="8px">
+          {currentPhotos.map((photo) => (
+            <img
+              key={photo.id}
+              src={photo.webformatURL}
+              alt={photo.tags}
+              style={{ width: "100%" }}
+            />
+          ))}
+        </Masonry>
+      </ResponsiveMasonry>
+
       <Pagination
         photosPerPage={photosPerPage}
         totalPhotos={photos.length}
