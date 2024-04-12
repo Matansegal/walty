@@ -1,0 +1,155 @@
+.app-container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100hv;
+}
+
+.searchbar {
+  width: 100%;
+  max-width: 300px;
+  display: inline-flex;
+}
+
+.searchbar__input {
+  flex-grow: 1;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #7e6cee;
+  border-radius: 5px 0 0 5px;
+  background: #F4FAF9;
+  transition: background 0.25s, box-shadow 0.25s;
+}
+
+.searchbar__input:focus {
+  font-family: Heebo;
+  background: white;
+  box-shadow: 0 0 2px #7e6cee;
+}
+
+.searchbar__input::placeholder {
+  font-family: Heebo;
+  color: #7e6cee;
+}
+
+.searchbar__button {
+  width: 60px;
+  background: #7e6cee;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.searchbar__button:active {
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.25);
+}
+
+
+.back-button {
+  cursor: pointer;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px 22px;
+  margin-top: 1rem;
+  box-sizing: border-box;
+}
+
+.back-button span {
+  font-family: Heebo;
+  font-size: 20px;
+  font-weight: 700;
+  color: #7e6cee;
+  padding-left: 5px
+}
+
+@media (max-width: 767px) {
+  .back-button {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 -40% 0 0;
+    padding: 8px 16px;
+  }
+  .back-button span{
+    font-size: 14px;
+    font-weight: 600;
+    color: #7e6cee;
+  }
+}
+
+
+.page-button {
+  cursor: pointer;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px 22px;
+  width: flex;
+  margin-top: 5px;
+  box-sizing: border-box
+}
+
+.page-button span {
+  font-family: Heebo;
+  font-size: 16px;
+  font-weight: 700;
+  color: #7e6cee;
+  padding-left: 5px
+}
+
+@media (max-width: 767px) {
+  .page-button {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .page-button span{
+    font-size: 12px;
+    font-weight: 400;
+    padding-left: 3px
+  }
+}
+
+
+.pagination {
+  gap: 15px; 
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: #B8B8B8;
+  margin-right: 12px;
+  border-radius: 8px;
+  padding: 2px;
+  color: white;
+  margin: 5px 5px 50px 5px;
+}
+
+.card:hover {
+  box-shadow: 0 12px 18px 0 rgba(0,0,0,0.2);
+}
+
+
+
